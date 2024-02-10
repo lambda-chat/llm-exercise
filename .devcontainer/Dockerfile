@@ -1,18 +1,12 @@
 FROM debian:bookworm
 
+# [optional]
 RUN apt-get update \
-    ## [optional] to install fish 
     && apt-get install -y python3-launchpadlib software-properties-common \
     && apt-add-repository -y ppa:fish-shell/release-3 \
     && apt-get update \
-    ## install essential tools
     && apt-get install -y \
-    # optional
-    fish \
-    # essential
-    # libgl1-mesa-glx libglib2.0-0 \
-    # for remote user
-    sudo \
+    fish sudo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
