@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ..
+        target: /app/llm-exercise
+      - type: bind
+        source: ~/.config/gh
+        target: /home/vscode/.config/gh
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [ gpu ]
+              count: all
