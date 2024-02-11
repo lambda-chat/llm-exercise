@@ -34,3 +34,21 @@ Candidates:
 - VS Code Settings
 - Sample code(s) for OAT (in scripts/)
 - etc.
+
+## Thoughts
+
+WSL2 に docker 環境と諸々のツールを用意すれば compose.yaml の
+
+```json:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [ gpu ]
+              count: all
+```
+
+の設定だけでよいです。これは `--gpus all` フラグを付けて Docker コンテナを起動するのと等価です。Docker 19.03 の時代から取り残されてしまっていました。
+
+Docker image 側で諸々調整する予定が、シンプルな Debian イメージで動作してしまいました。
