@@ -3,7 +3,6 @@ name = "llm-exercise"
 version = "0.1.0"
 description = ""
 authors = [
-    "lambda-chat <chat.algebrique@gmail.com>",
 ]
 readme = "README.md"
 
