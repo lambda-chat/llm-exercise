@@ -1,5 +1,7 @@
 # Debian based CUDA Dev Container
 
+Deprecated. See https://github.com/lambda-chat/python-template instead.
+
 ## Tested Environments
 
 OS:
